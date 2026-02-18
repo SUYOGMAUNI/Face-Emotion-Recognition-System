@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Emotion Recognition — Suyog Mauni</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🎭</div>
+                    <div>
+                        <h1>Emotion Recognition</h1>
+                        <p class="tagline">Real-time facial emotion detection powered by deep learning</p>
+                    </div>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">FPS</span>
+                        <span class="stat-value" id="fps">0.0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Frames</span>
+                        <span class="stat-value" id="frame-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Time</span>
+                        <span class="stat-value" id="session-time">00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="grid">
+                <!-- Video Feed -->
+                <div class="video-section">
+                    <div class="card video-card">
+                        <div class="card-header">
+                            <h2>Live Camera Feed</h2>
+                            <div class="status-badge" id="status-badge">
+                                <span class="status-dot"></span>
+                                <span id="status-text">Initializing...</span>
+                            </div>
+                        </div>
+                        <div class="video-container">
+                            <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Video Feed">
+                            <div class="video-overlay" id="no-face-overlay">
+                                <div class="overlay-content">
+                                    <div class="overlay-icon">👤</div>
+                                    <p>No face detected</p>
+                                    <span class="overlay-hint">Position yourself in front of the camera</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-controls">
+                            <button class="btn btn-primary" id="toggle-camera">
+                                <span class="btn-icon">⏸️</span>
+                                Stop Camera
+                            </button>
+                            <button class="btn btn-secondary" id="reset-stats">
+                                <span class="btn-icon">🔄</span>
+                                Reset Stats
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar-section">
+                    <!-- Emotion Distribution -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Emotion Distribution</h2>
+                        </div>
+                        <div class="emotion-chart" id="emotion-chart">
+                            <!-- Emotion bars will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Current Detection -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Current Status</h2>
+                        </div>
+                        <div class="current-status">
+                            <div class="detection-info">
+                                <div class="info-item">
+                                    <span class="info-label">Faces Detected:</span>
+                                    <span class="info-value" id="face-count">0</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Total Detections:</span>
+                                    <span class="info-value" id="total-detections">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About -->
+                    <div class="card about-card">
+                        <div class="card-header">
+                            <h2>About</h2>
+                        </div>
+                        <div class="about-content">
+                            <p>Real-time emotion recognition system using deep learning (Custom CNN + MobileNetV2).</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">TensorFlow</span>
+                                <span class="tech-badge">OpenCV</span>
+                                <span class="tech-badge">Flask</span>
+                            </div>
+                            <div class="author">
+                                <span>Built by</span>
+                                <a href="https://suyogmauni.com.np" target="_blank" rel="noopener">Suyog Mauni</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Suyog Mauni. Built with ❤️ using TensorFlow, OpenCV & Flask.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
