@@ -219,8 +219,8 @@ emotion-recognition/
 ### Install
 
 ```bash
-git clone https://github.com/yourusername/emotion-recognition
-cd emotion-recognition
+https://github.com/SUYOGMAUNI/Face-Emotion-Recognition-System.git
+cd Face_Emotion-Recognition-System
 
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
