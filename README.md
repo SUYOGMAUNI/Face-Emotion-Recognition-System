@@ -17,8 +17,6 @@
 - [Why These Results? — Honest Analysis](#why-these-results--honest-analysis)
 - [Project Structure](#project-structure)
 - [Local Setup](#local-setup)
-- [Deploy on Render](#deploy-on-render)
-- [Usage](#usage)
 - [Model Versions](#model-versions)
 
 ---
